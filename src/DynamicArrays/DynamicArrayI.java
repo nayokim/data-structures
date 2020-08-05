@@ -6,7 +6,7 @@ import java.util.List;
 public class DynamicArrayI {
     public static List<Integer> dynamicArray(int n, List<List<Integer>> queries) {
         // Write your code here
-        //create a list of list of integers
+        //create a list of list of integers - 2D arrayList
         List<List<Integer>> seqList = new ArrayList<>();
 
         //initialize with empty list
