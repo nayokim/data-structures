@@ -10,7 +10,7 @@ public class PrintInReverseExample {
         // java provides a stack class which models the stack data structure
 
         //creating a stack
-        Stack <String> stackOfCards = new Stack<>();
+        Stack<String> stackOfCards = new Stack<>();
 //        stackOfCards.pop(); // Throws EmptyStackException if the stack is empty
 //        System.out.println(stackOfCards);
 
@@ -30,5 +30,8 @@ public class PrintInReverseExample {
         //Get the item at the top of the stack without removing it
         String cardAtTop = stackOfCards.peek();
         System.out.println("card at top using .peek(): " + cardAtTop);
-        }
+
+
+
+    }
 }

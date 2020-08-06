@@ -1,5 +1,7 @@
 package PrintInReverse;
 
+import java.util.Stack;
+
 public class PrintInReverseI {
     static class SinglyLinkedListNode {
         public int data;
@@ -59,8 +61,20 @@ public class PrintInReverseI {
     static void reversePrint(SinglyLinkedListNode head) {
         if (head  == null ) return;
 
+        Stack <SinglyLinkedListNode> stack = new Stack();
+        SinglyLinkedListNode current = head;
 
+        while (current != null){
+            //loop through the list and add a node to the stack each time
+            stack.push(current);
+            current = current.next;
+            //we are going to push nodes onto the stack. When we are done with the loop, we are going to pop it off, and now it is in reverse order!
+        }
 
+        while (!stack.isEmpty()){
+            SinglyLinkedListNode node = stack.pop();
+            System.out.println(node.data);
+        }
 
     }
 }
