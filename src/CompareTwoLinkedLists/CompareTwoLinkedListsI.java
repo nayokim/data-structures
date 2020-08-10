@@ -1,9 +1,9 @@
-package ReverseLinkedList;
+package CompareTwoLinkedLists;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
 
-public class ReverseLinkedListI {
+public class CompareTwoLinkedListsI {
     static class SinglyLinkedListNode {
         public int data;
         public SinglyLinkedListNode next;
@@ -48,7 +48,7 @@ public class ReverseLinkedListI {
         }
     }
 
-    // Complete the reverse function below.
+    // Complete the compareLists function below.
 
     /*
      * For your reference:
@@ -59,20 +59,30 @@ public class ReverseLinkedListI {
      * }
      *
      */
-    static SinglyLinkedListNode reverse(SinglyLinkedListNode head) {
-            if (head == null) return head;
+    static boolean compareLists(SinglyLinkedListNode head1, SinglyLinkedListNode head2) {
 
-            SinglyLinkedListNode prevNode = null;
-            SinglyLinkedListNode currentNode = head;
+        //traverse all of them
+        //find if the nodes are the same
 
-            while (currentNode != null){
-                SinglyLinkedListNode nextNode = currentNode.next;
-                currentNode.next = prevNode;
-                prevNode = currentNode;
-                currentNode = nextNode;
+        //iteration
+        if (head1 == null && head2 == null) return true;
+
+        SinglyLinkedListNode firstRunner = head1;
+        SinglyLinkedListNode secondRunner = head2;
+        while (firstRunner != null && secondRunner != null) {
+            if (firstRunner.data != secondRunner.data){
+                break;
             }
-            return prevNode;
+            if (firstRunner.next == null && secondRunner.next == null){
+                return true;
+            }
+            firstRunner = firstRunner.next;
+            secondRunner = secondRunner.next;
+        }
+        return false;
+
+
+
 
     }
-
 }
