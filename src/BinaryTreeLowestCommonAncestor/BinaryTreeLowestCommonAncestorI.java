@@ -18,14 +18,18 @@ public class BinaryTreeLowestCommonAncestorI {
     //in this case, the tree is made for us
     public static Node lca(Node root, int v1, int v2) {
         // the bigger values are on the right and the smaller values are found on the left
-        //if our values are bigger than the roots value, we will traverse on the right. If its smaller, we will traverse on the left.
+
+        //if our values are bigger than the roots value, we will traverse on the right.
         if (v1 > root.data && v2> root.data){
             return lca (root.right, v1, v2);
         }
 
+        // If its smaller, we will traverse on the left.
         if (v2< root.data && v1 < root.data){
             return lca (root.left, v1, v2);
         }
+        // this means that these particular conditions werent hit so this is sort of "catch all"
+        // Else solution already found
         return root;
     }
 
