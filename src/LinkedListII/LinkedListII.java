@@ -65,6 +65,7 @@ public class LinkedListII {
             current_node = current_node.next;
         }
         current_node.next = new_node;
+        System.out.println(new_node);
         return head;
     }
 
